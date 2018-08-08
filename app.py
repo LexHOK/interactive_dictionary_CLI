@@ -16,6 +16,10 @@ def beauty_print(x):
 def meaning(w):
 	if w in data:
 		return beauty_print(data[w])
+	elif w.title() in data:
+		return beauty_print(data[w.title()])
+	elif w.upper() in data:
+		return beauty_print(data[w.upper()])
 	else:
 		short_list = get_close_matches(w, data, n=5, cutoff=0.65)
 		for i in short_list:
